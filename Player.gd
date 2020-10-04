@@ -18,21 +18,21 @@ func get_input(delta):
 		run()
 		velocity.x = -speed # 
 		get_node("Run").flip_h = true
+		get_node("dust_particle_left").emitting = true
 	
 	if Input.is_key_pressed(KEY_D):
 		run()
 		velocity.x = speed # 
 		get_node("Run").flip_h = false
+		get_node("dust_particle_right").emitting = true
 	
 	if Input.is_key_pressed(KEY_W):
 		run()
 		velocity.y = -speed*2 # 
-		get_node("Run").flip_h = false
 	
 	if Input.is_key_pressed(KEY_S):
 		run()
 		velocity.y = speed*2 # 
-		get_node("Run").flip_h = false
 		
 	if Input.is_action_just_released("ui_left"):
 		stand()
@@ -45,6 +45,8 @@ func get_input(delta):
 		
 	if Input.is_action_just_released("ui_down"):
 		stand()
+	
+	
 	
 func _physics_process(delta):
 	get_input(delta)

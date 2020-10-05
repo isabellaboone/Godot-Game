@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/grotto_escape_pack/graphics/tiles.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.0039, 8.00391 )
 
 [node name="Platform" type="Node2D"]
 scale = Vector2( 2, 2 )
@@ -10,3 +13,8 @@ texture = ExtResource( 1 )
 normal_map = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 96, 0, 32, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+shape = SubResource( 1 )

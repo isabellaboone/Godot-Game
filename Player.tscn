@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Player/particle/dust.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.9784, 18.0142 )
+extents = Vector2( 7.61488, 21.9112 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -110,18 +110,18 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
 [node name="Player_Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 25, 30 )
+position = Vector2( 23.6757, 26.027 )
 shape = SubResource( 1 )
 
 [node name="Run" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 16 )
 animation = "run"
-frame = 5
 playing = true
 centered = false
 
 [node name="Stand" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 16 )
 animation = "stand"
 playing = true

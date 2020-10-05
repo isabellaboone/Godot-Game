@@ -1,10 +1,8 @@
 extends KinematicBody2D
 
-const GRAVITY = 8000
+const GRAVITY = 3000
 var velocity = Vector2()
-export (int) var speed = 0
-var max_speed = 300
-var acceleration = 500
+export (int) var speed = 300
 var moving = false
 
 onready var run = get_node("Run")
@@ -18,39 +16,33 @@ func _ready():
 	pass # Replace with function body.
 
 func get_input(delta): 
-	velocity = Vector2()
+	#velocity = Vector2()
 	velocity.y += delta * GRAVITY
 	
-	#horizontal acceleration for smoother movement
-	speed += acceleration * delta
-	if speed > max_speed:
-		speed = max_speed
-	
-	#moving check so stand() isnt called if another key is still being pressed
-	
+
 	# Move with WASD
-	# Replace with input map eventually
-	if Input.is_mouse_button_pressed(2):
+	if Input.is_action_pressed("attack"):
 			punch()
 	else:
+		#moving check so stand() isnt called if another key is still being pressed
 		moving = false
-		if Input.is_key_pressed(KEY_A): 
+		if Input.is_action_pressed("move_left"):
 			run()
 			flipLeft()
 			velocity.x = -speed # 
 			get_node("dust_particle_left").emitting = true
 			
-		if Input.is_key_pressed(KEY_D):
+		if Input.is_action_pressed("move_right"):
 			run()
 			flipRight()
 			velocity.x = speed # 
 			get_node("dust_particle_right").emitting = true
 			
-		if Input.is_key_pressed(KEY_W):
+		if Input.is_action_just_pressed("jump"):
 			run()
-			velocity.y = -speed*2 # 
+			velocity.y = -speed*3 # 
 		
-		if Input.is_key_pressed(KEY_S):
+		if Input.is_action_pressed(("down")):
 			squat()
 			#velocity.y += speed*2 # 
 			
@@ -62,6 +54,8 @@ func _physics_process(delta):
 	get_input(delta)
 	velocity = move_and_slide(velocity)
 
+# Will look into animation trees to replace most of this implementation
+####################
 func run():
 	moving = true
 	run.visible = true;
@@ -71,14 +65,14 @@ func run():
 
 func stand():
 	moving = false
-	speed = 0
+	velocity.x = 0
 	run.visible = false;
 	squat.visible = false;
 	stand.visible = true;
 	get_node("Punch").visible = false;
 
 func punch():
-	velocity = Vector2(0, 0)
+	velocity.x = 0
 	run.visible = false;
 	squat.visible = false;
 	stand .visible = false;
@@ -92,13 +86,15 @@ func flipLeft():
 	run.flip_h = true
 	stand.flip_h = true
 	squat.flip_h = true
-	punch.flip_h = true	
+	punch.flip_h = true
+	get_node("Punch_HitBox/punch_collision").position.x = 8
 
 func flipRight():
 	run.flip_h = false
 	stand.flip_h = false
 	squat.flip_h = false
 	punch.flip_h = false
+	get_node("Punch_HitBox/punch_collision").position.x = 38
 
 func squat():
 	moving = true
@@ -106,10 +102,7 @@ func squat():
 	squat.visible = true;
 	stand.visible = false;
 	punch.visible = false;
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+#####################
 
 
 func _on_Punch_HitBox_area_entered(area):
@@ -120,4 +113,3 @@ func _on_Punch_HitBox_area_shape_entered(area_id, area, area_shape, self_shape):
 	print("attack!")
 	print(area_id)
 	print(area)
-	pass # Replace with function body.

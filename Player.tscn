@@ -114,7 +114,7 @@ shape = SubResource( 1 )
 visible = false
 frames = SubResource( 16 )
 animation = "run"
-frame = 6
+frame = 1
 playing = true
 centered = false
 
@@ -136,12 +136,12 @@ centered = false
 visible = false
 frames = SubResource( 16 )
 animation = "punch"
-frame = 1
 playing = true
 centered = false
 
 [node name="dust_particle_left" type="Particles2D" parent="."]
-position = Vector2( 16.0724, 49.011 )
+position = Vector2( 34, 48 )
+rotation = 3.14159
 emitting = false
 amount = 5
 lifetime = 0.5
@@ -151,7 +151,7 @@ process_material = SubResource( 19 )
 texture = ExtResource( 3 )
 
 [node name="dust_particle_right" type="Particles2D" parent="."]
-position = Vector2( 16.0724, 49.011 )
+position = Vector2( 17, 48 )
 emitting = false
 amount = 5
 lifetime = 0.5

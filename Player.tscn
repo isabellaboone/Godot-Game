@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Player/particle/dust.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.2324, 18.0142 )
+extents = Vector2( 12.9784, 18.0142 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -111,10 +111,9 @@ position = Vector2( 25, 30 )
 shape = SubResource( 1 )
 
 [node name="Run" type="AnimatedSprite" parent="."]
-visible = false
 frames = SubResource( 16 )
 animation = "run"
-frame = 1
+frame = 5
 playing = true
 centered = false
 

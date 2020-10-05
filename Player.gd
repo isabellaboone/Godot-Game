@@ -46,7 +46,7 @@ func get_input(delta):
 	
 	if Input.is_key_pressed(KEY_S):
 		run()
-		velocity.y = speed*2 # 
+		velocity.y += speed*2 # 
 		
 	if Input.is_action_just_released("ui_left"):
 		if !moving:

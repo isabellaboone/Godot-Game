@@ -1,9 +1,8 @@
 extends Node2D
 
-#var border_scene = preload("res://Map/Border.tscn")
-#var backgroundtile_scene = preload("res://Map/BackgroundTiles.tscn")
 var TileMap_scene = preload("res://TileMap.tscn")
 var player_scene = preload("res://Player.tscn")
+var fireslime_scene = preload("res://FireSlime.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,9 +10,12 @@ func _ready():
 	var tilemap = TileMap_scene.instance()
 	add_child(tilemap)
 	
-
 	var player = player_scene.instance()
 	add_child(player)
+	
+	var fireslime = fireslime_scene.instance()
+	fireslime.position = Vector2(900, 531)
+	add_child(fireslime)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

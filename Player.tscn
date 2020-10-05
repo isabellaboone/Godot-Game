@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player/player/player-spritemap-v9-greenpants.png" type="Texture" id=2]
@@ -83,7 +83,7 @@ animations = [ {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "punch",
-"speed": 12.0
+"speed": 8.0
 } ]
 
 [sub_resource type="Curve" id=17]
@@ -102,6 +102,9 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_curve = SubResource( 18 )
 
+[sub_resource type="CapsuleShape2D" id=20]
+height = 30.0
+
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
@@ -111,6 +114,7 @@ position = Vector2( 25, 30 )
 shape = SubResource( 1 )
 
 [node name="Run" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 16 )
 animation = "run"
 frame = 5
@@ -118,7 +122,6 @@ playing = true
 centered = false
 
 [node name="Stand" type="AnimatedSprite" parent="."]
-visible = false
 frames = SubResource( 16 )
 animation = "stand"
 playing = true
@@ -135,6 +138,7 @@ centered = false
 visible = false
 frames = SubResource( 16 )
 animation = "punch"
+frame = 2
 playing = true
 centered = false
 
@@ -158,3 +162,14 @@ one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 19 )
 texture = ExtResource( 3 )
+
+[node name="Punch_HitBox" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="punch_collision" type="CollisionShape2D" parent="Punch_HitBox"]
+position = Vector2( 38, 23 )
+shape = SubResource( 20 )
+disabled = true
+[connection signal="area_entered" from="Punch_HitBox" to="." method="_on_Punch_HitBox_area_entered"]
+[connection signal="area_shape_entered" from="Punch_HitBox" to="." method="_on_Punch_HitBox_area_shape_entered"]

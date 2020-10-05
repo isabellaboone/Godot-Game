@@ -16,6 +16,10 @@ func _ready():
 	var fireslime = fireslime_scene.instance()
 	fireslime.position = Vector2(900, 531)
 	add_child(fireslime)
+	
+	var fireslime2 = fireslime_scene.instance()
+	fireslime2.position = Vector2(800, 431)
+	add_child(fireslime2)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

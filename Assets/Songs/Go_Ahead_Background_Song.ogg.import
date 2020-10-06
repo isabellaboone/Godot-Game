@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Go_Ahead_Background_Song.ogg-868c9536b075e22358736db4dba41329.oggstr"
+
+[deps]
+
+source_file="res://Assets/Songs/Go_Ahead_Background_Song.ogg"
+dest_files=[ "res://.import/Go_Ahead_Background_Song.ogg-868c9536b075e22358736db4dba41329.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

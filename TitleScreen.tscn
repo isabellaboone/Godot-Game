@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/title_screen/buttons/HowToPlayButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Songs/Eivor_Title_Screen.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Assets/title_screen/buttons/ExitButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/title_screen/buttons/PlayButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/title_screen/fade_in/FadeIn.tscn" type="PackedScene" id=5]
@@ -87,6 +88,10 @@ valign = 1
 
 [node name="FadeIn" parent="." instance=ExtResource( 5 )]
 visible = false
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 1.0
 [connection signal="pressed" from="Menu/CenterRow/Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/ExitButton" to="." method="_on_ExitButton_pressed"]

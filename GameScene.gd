@@ -7,6 +7,7 @@ var ui = preload("res://UI.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$BackgroundMusic.play()
 	
 	var tilemap = TileMap_scene.instance()
 	add_child(tilemap)

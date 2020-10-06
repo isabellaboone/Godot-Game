@@ -113,3 +113,4 @@ func _on_Punch_HitBox_area_shape_entered(area_id, area, area_shape, self_shape):
 	print("attack!")
 	print(area_id)
 	print(area)
+

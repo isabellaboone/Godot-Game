@@ -41,27 +41,27 @@ region = Rect2( 322, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 46, 50 )
+region = Rect2( 92, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 46, 0, 46, 50 )
+region = Rect2( 138, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 92, 0, 46, 50 )
+region = Rect2( 184, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 138, 0, 46, 50 )
+region = Rect2( 230, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 184, 0, 46, 50 )
+region = Rect2( 0, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 230, 0, 46, 50 )
+region = Rect2( 46, 0, 46, 50 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
@@ -70,20 +70,20 @@ animations = [ {
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "punch",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 14 ) ],
 "loop": true,
 "name": "stand",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ) ],
+"frames": [ SubResource( 15 ) ],
 "loop": true,
 "name": "squat",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
-"loop": true,
-"name": "punch",
-"speed": 8.0
 } ]
 
 [sub_resource type="Curve" id=17]
@@ -117,6 +117,7 @@ shape = SubResource( 1 )
 visible = false
 frames = SubResource( 16 )
 animation = "run"
+frame = 2
 playing = true
 centered = false
 
@@ -138,7 +139,7 @@ centered = false
 visible = false
 frames = SubResource( 16 )
 animation = "punch"
-frame = 3
+frame = 2
 playing = true
 centered = false
 

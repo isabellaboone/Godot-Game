@@ -78,6 +78,9 @@ func punch():
 	stand .visible = false;
 	punch.visible = true
 	get_node("Punch_HitBox/punch_collision").disabled = false
+	# We could make this only play when it actually hits, but for now it works
+	if($Punch_SFX.playing == false):
+		$Punch_SFX.play()
 	punch.play();
 	yield(punch, "animation_finished")
 	get_node("Punch_HitBox/punch_collision").disabled = true

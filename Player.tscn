@@ -1,63 +1,64 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player/player/player-spritemap-v9-greenpants.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Player/particle/dust.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SFX/punch.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.61488, 21.9112 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 150, 46, 50 )
+region = Rect2( 0, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 46, 150, 46, 50 )
+region = Rect2( 0, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 92, 150, 46, 50 )
+region = Rect2( 46, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 138, 150, 46, 50 )
+region = Rect2( 92, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 184, 150, 46, 50 )
+region = Rect2( 138, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 230, 150, 46, 50 )
+region = Rect2( 184, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 276, 150, 46, 50 )
+region = Rect2( 230, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 322, 150, 46, 50 )
+region = Rect2( 276, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 92, 0, 46, 50 )
+region = Rect2( 322, 150, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 138, 0, 46, 50 )
+region = Rect2( 92, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 184, 0, 46, 50 )
+region = Rect2( 138, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 230, 0, 46, 50 )
+region = Rect2( 184, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 46, 50 )
+region = Rect2( 230, 0, 46, 50 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
@@ -65,20 +66,20 @@ region = Rect2( 46, 0, 46, 50 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "punch",
 "speed": 8.0
-}, {
-"frames": [ SubResource( 14 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
 }, {
 "frames": [ SubResource( 15 ) ],
 "loop": true,
@@ -117,7 +118,7 @@ shape = SubResource( 1 )
 visible = false
 frames = SubResource( 16 )
 animation = "run"
-frame = 7
+frame = 5
 playing = true
 centered = false
 
@@ -171,5 +172,9 @@ collision_mask = 2147483648
 position = Vector2( 38, 23 )
 shape = SubResource( 20 )
 disabled = true
+
+[node name="Punch_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 1.0
 [connection signal="area_entered" from="Punch_HitBox" to="." method="_on_Punch_HitBox_area_entered"]
 [connection signal="area_shape_entered" from="Punch_HitBox" to="." method="_on_Punch_HitBox_area_shape_entered"]

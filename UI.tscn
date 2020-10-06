@@ -29,6 +29,7 @@ __meta__ = {
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_right = 46.0
 margin_bottom = 24.0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )
 text = "Quit"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

@@ -1,36 +1,53 @@
 # Gaem
+General Game:
+- Background music during gameplay
 
-1 NPC/Player per member
--	One NPC to spend cells at
--	NPC has talking animation
--	One NPC to kill & gain cells
--	This NPC has death & fighting animation, maybe? 
--	Player
--	Talking & fighting animation
--	Moveable
--	Pick up cells off ground, open doors
--	Pick up scrolls that increase health, dmg, etc
+Player:
+- Fighting and running animation
+- Moveable
+- Pick up cells off ground
+- Open/close doors
+- Pick up scrolls that increase health, dmg, etc
+- Has particle effects at feet when running around
+- Sound effect when hit
+- Sound effect when fighting
+- Sound effect when interacting with NPC
 
-Need at least 1 of each: 
--	KineticBody2D
--	StaticBody2D
--	RigidBody2D
--	Area2D
+NPC
+- Death and fighting animation
+- Sound effect when "sale" is made
+- Particle effect when "sale" is made
+- Sound effect when dies
+- Sound effect when fighting
 
-Background
--	2 background items per person, one must be stationary, one must move
+Mobs
+- When they die, they drop cells the player can pick up
 
-Particle effects
--	2 particle effects per person, one attached to an object that moves, one attached to a stationary object
-Sound Effects
--	2 sound effects per person, one has to be attached to the NPC/Player the member is assigned to
+KineticBody2D
+- Player
+
+StaticBody2D
+- Walls, borders, platforms
+
+RigidBody2D
+- Apply forces
+
+Area2D
+- Scrolls that increase health, dmg, etc
+
+Background (4, 2 stationary, 2 moving)
+- Rats running around (?)
+
+Stationary objects(2)
+- Each need a particle effect
 
 Goal
 -	Kill all enemies, open final door, then go back go intro screen
 
 Intro Screen
--	Must give credit to where game assets come from, who developed what
--	Ability to adjust volume of sound effects and music
--	Provide a way to start the game and view a set of instructions for the game
--	Music shuts off when you start a game, and background music the game is playing.  
+- Display credits in top left
+- Volume sliders for both sound effects and music in bottom right
+- "Play" and "How to Play" buttons
+- Title screen music that stops when play button is pressed.
+
  

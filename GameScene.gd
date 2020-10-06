@@ -19,7 +19,7 @@ func _ready():
 	add_child(fireslime)
 	
 	var fireslime2 = fireslime_scene.instance()
-	fireslime2.position = Vector2(800, 431)
+	fireslime2.position = Vector2(600, 531)
 	add_child(fireslime2)
 	
 	var uii = ui.instance()

@@ -16,61 +16,73 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 1
+color = Color( 0.360784, 0.364706, 0.290196, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Menu" type="VBoxContainer" parent="."]
+margin_right = 1026.0
+margin_bottom = 554.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Logo" type="TextureRect" parent="Menu"]
-margin_right = 1024.0
+margin_right = 1026.0
 margin_bottom = 344.0
-size_flags_horizontal = 13
-size_flags_vertical = 13
 texture = ExtResource( 7 )
 stretch_mode = 4
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 348.0
-margin_right = 1024.0
-margin_bottom = 577.0
+margin_right = 1026.0
+margin_bottom = 536.0
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 1024.0
-margin_bottom = 229.0
+margin_right = 1026.0
+margin_bottom = 188.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="PlayButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
-margin_top = 20.0
-margin_right = 1024.0
-margin_bottom = 80.0
+margin_right = 1026.0
 rect_min_size = Vector2( 360, 60 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="HowToPlayButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
-margin_top = 84.0
-margin_right = 1024.0
-margin_bottom = 144.0
+margin_top = 64.0
+margin_right = 1026.0
+margin_bottom = 124.0
 rect_min_size = Vector2( 360, 60 )
+mouse_default_cursor_shape = 2
 
 [node name="ExitButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
-margin_top = 148.0
-margin_right = 1024.0
-margin_bottom = 208.0
+margin_top = 128.0
+margin_right = 1026.0
+margin_bottom = 188.0
 rect_min_size = Vector2( 360, 60 )
+mouse_default_cursor_shape = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
-margin_top = 581.0
-margin_right = 1024.0
-margin_bottom = 810.0
+margin_top = 540.0
+margin_right = 1026.0
+margin_bottom = 554.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Menu/VBoxContainer"]
-margin_right = 1024.0
+margin_right = 1026.0
 margin_bottom = 14.0
 text = "Credits go here"
 align = 1

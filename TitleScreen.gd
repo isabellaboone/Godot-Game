@@ -13,6 +13,7 @@ func _on_HowToPlayButton_pressed():
 	
 func _on_ExitButton_pressed():
 	print("Exit")
+	get_tree().quit()
 
 func _ready(): 
 	$BackgroundMusic.volume_db = 1

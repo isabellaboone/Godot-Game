@@ -118,7 +118,7 @@ shape = SubResource( 1 )
 visible = false
 frames = SubResource( 16 )
 animation = "run"
-frame = 3
+frame = 4
 playing = true
 centered = false
 
@@ -140,7 +140,7 @@ centered = false
 visible = false
 frames = SubResource( 16 )
 animation = "punch"
-frame = 3
+frame = 1
 playing = true
 centered = false
 

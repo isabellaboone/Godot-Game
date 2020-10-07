@@ -18,5 +18,12 @@ func _ready():
 	$BackgroundMusic.play()
 
 
-func _on_HSlider_value_changed(value):
-	$BackgroundMusic.volume_db = linear2db(value)
+func _on_Music_value_changed(value):
+	print(value)
+	print(linear2db(value))
+	globals.musicvol = value
+	$BackgroundMusic.volume_db = linear2db(globals.musicvol)
+
+
+func _on_Audio_value_changed(value):
+	globals.soundvol = value

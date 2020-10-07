@@ -4,6 +4,7 @@ const GRAVITY = 3000
 var velocity = Vector2()
 export (int) var speed = 300
 var moving = false
+var can_pick = true
 
 onready var run = get_node("Run")
 onready var stand = get_node("Stand")
@@ -78,6 +79,9 @@ func punch():
 	stand .visible = false;
 	punch.visible = true
 	get_node("Punch_HitBox/punch_collision").disabled = false
+	# We could make this only play when it actually hits, but for now it works
+	if($Punch_SFX.playing == false):
+		$Punch_SFX.play()
 	punch.play();
 	yield(punch, "animation_finished")
 	get_node("Punch_HitBox/punch_collision").disabled = true
@@ -113,3 +117,4 @@ func _on_Punch_HitBox_area_shape_entered(area_id, area, area_shape, self_shape):
 	print("attack!")
 	print(area_id)
 	print(area)
+

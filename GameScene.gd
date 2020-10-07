@@ -3,8 +3,10 @@ extends Node2D
 var TileMap_scene = preload("res://TileMap.tscn")
 var player_scene = preload("res://Player.tscn")
 var fireslime_scene = preload("res://FireSlime.tscn")
-var ui = preload("res://UI.tscn")
+var ui_scene = preload("res://UI.tscn")
+var red_book_scene = preload("res://Red_Book.tscn")
 
+var red_book
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$BackgroundMusic.play()
@@ -20,13 +22,17 @@ func _ready():
 	add_child(fireslime)
 	
 	var fireslime2 = fireslime_scene.instance()
-	fireslime2.position = Vector2(600, 531)
+	fireslime2.position = Vector2(900, 370)
 	add_child(fireslime2)
 	
-	var uii = ui.instance()
-	add_child(uii)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	var ui = ui_scene.instance()
+	add_child(ui)
+	
+	# Add Books that give buffs eventually or whatever
+	red_book = red_book_scene.instance()
+	red_book.position = Vector2(925, 240)
+	add_child(red_book)
+	
+func _process(delta):
+	pass;
+	

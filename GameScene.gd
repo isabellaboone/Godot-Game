@@ -5,9 +5,12 @@ var player_scene = preload("res://Player.tscn")
 var fireslime_scene = preload("res://FireSlime.tscn")
 var ui_scene = preload("res://UI.tscn")
 var red_book_scene = preload("res://Red_Book.tscn")
+var rat_npc_scene = preload("res://Rat_NPC.tscn")
 
 var player
+var npc
 var red_book
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	globals.coins = 0 # reset coins
@@ -16,6 +19,10 @@ func _ready():
 	
 	var tilemap = TileMap_scene.instance()
 	add_child(tilemap)
+	
+	npc = rat_npc_scene.instance()
+	npc.position = Vector2(100, 515)
+	add_child(npc)
 	
 	player = player_scene.instance()
 	add_child(player)
@@ -42,5 +49,9 @@ func _process(delta):
 			player.pick_up_book()
 			remove_child(red_book)
 			red_book = null
-			globals.coins += 1
+			globals.pickup_coin()
 	
+func _input(event): 
+	if(Input.is_action_just_pressed("interact")):
+		pass
+	pass

@@ -93,6 +93,7 @@ shape = SubResource( 1 )
 [node name="standing" type="AnimatedSprite" parent="."]
 position = Vector2( -4, -8.5 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="walking" type="AnimatedSprite" parent="."]
@@ -100,7 +101,7 @@ visible = false
 position = Vector2( -4, -8.5 )
 frames = SubResource( 13 )
 animation = "New Anim"
-frame = 7
+frame = 5
 playing = true
 
 [node name="HurtBox" type="Area2D" parent="."]

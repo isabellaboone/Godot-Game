@@ -24,7 +24,7 @@ custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.415686, 0.745098, 0.188235, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 5
-text = "Defualt Text"
+text = "Default Text"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

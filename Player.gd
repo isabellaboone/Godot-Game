@@ -4,7 +4,7 @@ const GRAVITY = 3000
 var velocity = Vector2()
 export (int) var speed = 300
 var moving = false
-var can_pick = true
+var damage = 5
 
 onready var run = get_node("Run")
 onready var stand = get_node("Stand")
@@ -118,3 +118,6 @@ func _on_Punch_HitBox_area_shape_entered(area_id, area, area_shape, self_shape):
 	print(area_id)
 	print(area)
 
+func pick_up_book():
+	print("damage increased")
+	damage += 1

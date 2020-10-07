@@ -140,6 +140,7 @@ centered = false
 visible = false
 frames = SubResource( 16 )
 animation = "punch"
+frame = 3
 playing = true
 centered = false
 

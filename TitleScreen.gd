@@ -15,5 +15,8 @@ func _on_ExitButton_pressed():
 	get_tree().quit()
 
 func _ready(): 
-	$BackgroundMusic.volume_db = 1
 	$BackgroundMusic.play()
+
+
+func _on_HSlider_value_changed(value):
+	$BackgroundMusic.volume_db = linear2db(value)

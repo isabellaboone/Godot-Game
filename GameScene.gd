@@ -1,6 +1,10 @@
 extends Node2D
 
-var TileMap_scene = preload("res://TileMap.tscn")
+#var TileMap_scene = preload("res://TileMap.tscn")
+
+var tileMap = preload("res://RandomTileMap.tscn")
+var RandomTileMap = preload("res://RandomTileMap.gd")
+
 var player_scene = preload("res://Player.tscn")
 var fireslime_scene = preload("res://FireSlime.tscn")
 var ui_scene = preload("res://UI.tscn")
@@ -11,20 +15,50 @@ var player
 var npc
 var red_book
 
+var starting_pos = Vector2(64, 64)
+var borders = Rect2(starting_pos.x/32, starting_pos.y/32, 28, 15)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	globals.coins = 0 # reset coins
 	$BackgroundMusic.volume_db = linear2db(globals.musicvol)
 	$BackgroundMusic.play()
 	
-	var tilemap = TileMap_scene.instance()
-	add_child(tilemap)
+	#var tilemap = TileMap_scene.instance()
+	#add_child(tilemap)
+	###########################
+	red_book = red_book_scene.instance()
+	player = player_scene.instance()
+	###########################
+	randomize()
+	var randomtilemap = tileMap.instance()
+	var walker = Walker.new(starting_pos/32, borders)#(red_book_pos/32), borders) #19, 11
+	var map = walker.walk(200)
+	
+	# trying to add book as goal
+	var red_book_end = red_book_scene.instance()
+	red_book_end.position = walker.get_end_room().pos*32
+	#add_child(red_book)
+	
+	#walker.queue_free()
+	for location in map:
+		randomtilemap.set_cellv(location, 18)
+		var temp = Vector2(location.x, location.y+1)
+		randomtilemap.set_cellv(temp, 18)
+		temp = Vector2(location.x, location.y-1)
+		randomtilemap.set_cellv(temp, 18)
+		temp = Vector2(location.x+1, location.y)
+		randomtilemap.set_cellv(temp, 18)
+	randomtilemap.update_bitmask_region(borders.position, borders.end)
+	add_child(randomtilemap)
+	##################################
 	
 	npc = rat_npc_scene.instance()
 	npc.position = Vector2(100, 515)
 	add_child(npc)
 	
-	player = player_scene.instance()
+#	player = player_scene.instance()
+	player.position = starting_pos
 	add_child(player)
 	
 	var fireslime = fireslime_scene.instance()
@@ -39,9 +73,11 @@ func _ready():
 	add_child(ui)
 	
 	# Add Books that give buffs eventually or whatever
-	red_book = red_book_scene.instance()
+	#red_book = red_book_scene.instance()
 	red_book.position = Vector2(925, 240)
 	add_child(red_book)
+	
+	add_child(red_book_end)
 	
 func _process(delta):
 	if(red_book != null):

@@ -6,6 +6,7 @@ var fireslime_scene = preload("res://FireSlime.tscn")
 var ui_scene = preload("res://UI.tscn")
 var red_book_scene = preload("res://Red_Book.tscn")
 
+var player
 var red_book
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +15,7 @@ func _ready():
 	var tilemap = TileMap_scene.instance()
 	add_child(tilemap)
 	
-	var player = player_scene.instance()
+	player = player_scene.instance()
 	add_child(player)
 	
 	var fireslime = fireslime_scene.instance()
@@ -34,5 +35,9 @@ func _ready():
 	add_child(red_book)
 	
 func _process(delta):
-	pass;
+	if(red_book != null):
+		if(red_book.picked_up == true):
+			player.pick_up_book()
+			remove_child(red_book)
+			red_book = null
 	

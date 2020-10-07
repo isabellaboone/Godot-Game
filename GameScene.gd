@@ -10,6 +10,8 @@ var player
 var red_book
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	globals.coins = 0 # reset coins
+	$BackgroundMusic.volume_db = linear2db(globals.musicvol)
 	$BackgroundMusic.play()
 	
 	var tilemap = TileMap_scene.instance()
@@ -40,4 +42,5 @@ func _process(delta):
 			player.pick_up_book()
 			remove_child(red_book)
 			red_book = null
+			globals.coins += 1
 	

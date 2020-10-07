@@ -14,7 +14,7 @@ onready var punch = get_node("Punch")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stand()
-	pass # Replace with function body.
+	$Punch_SFX.volume_db = linear2db(globals.soundvol)
 
 func get_input(delta): 
 	#velocity = Vector2()

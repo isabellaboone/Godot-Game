@@ -4,6 +4,7 @@ const GRAVITY = 3000
 var velocity = Vector2()
 export (int) var speed = 300
 var moving = false
+var can_pick = true
 
 onready var run = get_node("Run")
 onready var stand = get_node("Stand")

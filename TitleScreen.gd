@@ -1,6 +1,5 @@
 extends Control
 
-
 func _on_PlayButton_pressed():
 	print("Play")
 	get_tree().change_scene("res://GameScene.tscn")

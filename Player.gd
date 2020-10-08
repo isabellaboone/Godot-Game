@@ -11,6 +11,8 @@ onready var stand = get_node("Stand")
 onready var squat = get_node("Squat")
 onready var punch = get_node("Punch")
 
+var action = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stand()
@@ -22,7 +24,9 @@ func get_input(delta):
 	
 
 	# Move with WASD
-	if Input.is_action_pressed("attack"):
+	if action:
+		pass
+	elif Input.is_action_pressed("attack"):
 			punch()
 	else:
 		#moving check so stand() isnt called if another key is still being pressed
@@ -63,6 +67,10 @@ func run():
 	squat.visible = false;
 	stand.visible = false;
 	punch.visible = false;
+	#action = true
+	#run.play()
+	#yield(run, "animation_finished")
+	#action = false
 
 func stand():
 	moving = false
@@ -70,21 +78,22 @@ func stand():
 	run.visible = false;
 	squat.visible = false;
 	stand.visible = true;
-	get_node("Punch").visible = false;
+	punch.visible = false;
+
 
 func punch():
-	velocity.x = 0
+	velocity.x = velocity.x/3
 	run.visible = false;
 	squat.visible = false;
 	stand .visible = false;
 	punch.visible = true
+	action = true
 	get_node("Punch_HitBox/punch_collision").disabled = false
 	# We could make this only play when it actually hits, but for now it works
-	if($Punch_SFX.playing == false):
-		$Punch_SFX.play()
 	punch.play();
 	yield(punch, "animation_finished")
 	get_node("Punch_HitBox/punch_collision").disabled = true
+	action = false
 
 func flipLeft():
 	run.flip_h = true
@@ -114,6 +123,8 @@ func _on_Punch_HitBox_area_entered(area):
 
 
 func _on_Punch_HitBox_area_shape_entered(area_id, area, area_shape, self_shape):
+	if($Punch_SFX.playing == false):
+		$Punch_SFX.play()
 	print("attack!")
 	print(area_id)
 	print(area)

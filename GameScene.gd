@@ -24,8 +24,8 @@ func _ready():
 	$BackgroundMusic.volume_db = linear2db(globals.musicvol)
 	$BackgroundMusic.play()
 	
-	red_book = red_book_scene.instance()
 	player = player_scene.instance()
+	player.position = starting_pos
 	
 	randomize()
 	var walker = Walker.new(starting_pos/32, borders)#(red_book_pos/32), borders) #19, 11
@@ -38,38 +38,54 @@ func _ready():
 	#add_child(red_book)
 	
 	walker = Walker.new(walker.get_end_room().pos, borders)
-	map += walker.walk(100)
-	var new_end = walker.get_end_room().pos
-	generateMap(walker,map)
+	map += walker.walk(20)
+	#var new_end = walker.get_end_room().pos
 	
 	npc = rat_npc_scene.instance()
-	npc.position = Vector2(100, 515)
-	add_child(npc)
+	npc.position = walker.get_end_room().pos*32
+	npc.position.x += 16
+	npc.position.y += 32
 	
-#	player = player_scene.instance()
-	player.position = starting_pos
-	add_child(player)
+	walker = Walker.new(walker.get_end_room().pos, borders)
+	map += walker.walk(100)
 	
 	var fireslime = fireslime_scene.instance()
-	fireslime.position = Vector2(900, 531)
-	add_child(fireslime)
+	fireslime.position = walker.get_end_room().pos*32
+	fireslime.position.x += 16
+	fireslime.position.y += 16
+	
+	walker = Walker.new(walker.get_end_room().pos, borders)
+	map += walker.walk(100)
 	
 	var fireslime2 = fireslime_scene.instance()
-	fireslime2.position = Vector2(900, 370)
-	add_child(fireslime2)
+	fireslime2.position = walker.get_end_room().pos*32
+	fireslime2.position.x += 16
+	fireslime2.position.y += 16
+	
+	walker = Walker.new(walker.get_end_room().pos, borders)
+	map += walker.walk(100)
 	
 	var ui = ui_scene.instance()
-	add_child(ui)
 	
 	# Add Books that give buffs eventually or whatever
-	#red_book = red_book_scene.instance()
+	red_book = red_book_scene.instance()
 	red_book.position = walker.get_end_room().pos*32#Vector2(925, 240)
 	red_book.position.x += 16
 	red_book.position.y += 48
-	add_child(red_book)
 	red_book_end.position.x += 16
 	red_book_end.position.y += 48
+	
+	
+	generateMap(walker,map)
+	
+	add_child(npc)
+	add_child(player)
+	add_child(fireslime)
+	add_child(fireslime2)
+	add_child(ui)
+	add_child(red_book)
 	add_child(red_book_end)
+	
 	
 func _process(delta):
 	if(red_book != null):

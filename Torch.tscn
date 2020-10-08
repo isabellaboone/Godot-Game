@@ -1,0 +1,61 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Torch/Size_128/Torch_128_Flamas_6.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Torch/Size_128/Torch_128_Flamas_3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Torch/Size_128/Torch_128_Flamas_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Torch/Size_128/Torch_128_Flamas_0.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Torch/Size_128/Torch_128_Flamas_4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Torch/Size_128/Torch_128_Flamas_5.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Torch/Size_128/Torch_128_Flamas_2.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.496063, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.445313, 0, 1, 0.921875, 1, 0, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.423423 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 1
+emission_sphere_radius = 10.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+initial_velocity_random = 1.0
+angular_velocity = 5.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 5.0
+radial_accel = 5.0
+tangential_accel = 5.0
+scale = 5.0
+scale_random = 1.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+hue_variation = 1.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 6
+playing = true
+
+[node name="Particles2D" type="Particles2D" parent="Node2D"]
+process_material = SubResource( 6 )

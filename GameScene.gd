@@ -64,8 +64,11 @@ func _ready():
 	# Add Books that give buffs eventually or whatever
 	#red_book = red_book_scene.instance()
 	red_book.position = walker.get_end_room().pos*32#Vector2(925, 240)
+	red_book.position.x += 16
+	red_book.position.y += 48
 	add_child(red_book)
-	
+	red_book_end.position.x += 16
+	red_book_end.position.y += 48
 	add_child(red_book_end)
 	
 func _process(delta):

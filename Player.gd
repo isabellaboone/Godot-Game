@@ -50,6 +50,11 @@ func get_input(delta):
 		if Input.is_action_pressed(("down")):
 			squat()
 			#velocity.y += speed*2 # 
+		if Input.is_action_just_pressed("wavedash"):
+			print("wavedash!")
+			var direction = Vector2(Input.get_joy_axis(0, JOY_ANALOG_LX), Input.get_joy_axis(0, JOY_ANALOG_LY))
+			velocity.y += sin(direction.angle()) * speed
+			velocity.x += cos(direction.angle()) * GRAVITY
 			
 		if !moving: 
 			stand()
@@ -115,19 +120,12 @@ func squat():
 	squat.visible = true;
 	stand.visible = false;
 	punch.visible = false;
-#####################
-
-
-func _on_Punch_HitBox_area_entered(area):
-	pass # Replace with function body.
-
 
 func _on_Punch_HitBox_area_shape_entered(area_id, area, area_shape, self_shape):
 	if($Punch_SFX.playing == false):
 		$Punch_SFX.play()
-	print("attack!")
-	print(area_id)
-	print(area)
+	print("from player ", area_id)
+	print("from player ", area)
 
 func pick_up_book():
 	print("damage increased")

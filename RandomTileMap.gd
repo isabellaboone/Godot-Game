@@ -72,9 +72,9 @@ func get_end_room():
 
 var blankTile = 22
 var dict = {"u": 10, "d" : 2, "l": 12, "r":15, "dl": 0, "ul": 8, "ur": 11,
-"ulr": blankTile, "dlr": blankTile, "udlr":blankTile, "udr": blankTile,
- "udl": blankTile, "ud": blankTile, "lr" : blankTile, "dr": blankTile}
-
+"ulr": blankTile, "dlr": blankTile, "udlr":19, "udr": blankTile,
+ "udl": blankTile, "ud": blankTile, "lr" : blankTile, "dr": 3}
+var blanks = [blankTile, 19]
 
 func cleanTileMap(tileMap):
 	var used_cells = tileMap.get_used_cells()
@@ -85,7 +85,7 @@ func cleanTileMap(tileMap):
 		if x == 0 or x == 1:
 			continue
 		#print(tileMap.get_cell(x, y))
-		if tileMap.get_cell(x, y) == 19:
+		if tileMap.get_cell(x, y) in blanks : 
 			continue
 		var temp = ""
 		if(tileMap.get_cell(x, y-1) == check):
@@ -96,7 +96,7 @@ func cleanTileMap(tileMap):
 			temp += "l"
 		if(tileMap.get_cell(x+1, y) == check):
 			temp += "r"
-		if temp != "" and temp != "d":
+		if temp != "":# and temp != "dr" and temp != "dl":
 			tileMap.set_cellv(pos, dict[temp])
 		print(temp)
 		#var temp = Vector2(location.x, location.y+1)

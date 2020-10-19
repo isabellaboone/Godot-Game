@@ -46,3 +46,10 @@ Intro Screen
 - Title screen music that stops when play button is pressed. - DONE
 
  
+TODO: 
+- Doors
+- Double jump item
+- Background object
+- Weapons
+- Actual enemies
+- Enemies drop cells

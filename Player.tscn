@@ -1,99 +1,96 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Player/player/player-spritemap-v9-greenpants.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Player/particle/dust.png" type="Texture" id=3]
 [ext_resource path="res://Assets/SFX/punch.wav" type="AudioStream" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.61488, 21.9112 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 46, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 92, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 138, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 184, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 230, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
 region = Rect2( 276, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
 region = Rect2( 322, 150, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
 region = Rect2( 92, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
 region = Rect2( 138, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
 region = Rect2( 184, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
 region = Rect2( 230, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
 region = Rect2( 46, 0, 46, 50 )
 
-[sub_resource type="SpriteFrames" id=16]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "punch",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 15 ) ],
+"frames": [ SubResource( 14 ) ],
 "loop": true,
 "name": "squat",
 "speed": 5.0
 } ]
 
-[sub_resource type="Curve" id=17]
+[sub_resource type="Curve" id=16]
 _data = [ Vector2( 0, 0.678409 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.151136 ), -1.35872, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=18]
-curve = SubResource( 17 )
+[sub_resource type="CurveTexture" id=17]
+curve = SubResource( 16 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=18]
 flag_disable_z = true
 direction = Vector3( -45, 0, 0 )
 spread = 10.0
@@ -101,45 +98,45 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 45.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 18 )
+scale_curve = SubResource( 17 )
 
-[sub_resource type="CapsuleShape2D" id=20]
+[sub_resource type="CapsuleShape2D" id=19]
 height = 30.0
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
-[node name="Player_Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 23.6757, 26.027 )
-shape = SubResource( 1 )
+[node name="Player_Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2( 22, 30 )
+polygon = PoolVector2Array( 0, -25, 11, -5, 0, 18, -11, -5 )
 
 [node name="Run" type="AnimatedSprite" parent="."]
 visible = false
-frames = SubResource( 16 )
+frames = SubResource( 15 )
 animation = "run"
-frame = 3
+frame = 6
 playing = true
 centered = false
 
 [node name="Stand" type="AnimatedSprite" parent="."]
-visible = false
-frames = SubResource( 16 )
+frames = SubResource( 15 )
 animation = "stand"
 playing = true
 centered = false
 
 [node name="Squat" type="AnimatedSprite" parent="."]
 visible = false
-frames = SubResource( 16 )
+frames = SubResource( 15 )
 animation = "squat"
 playing = true
 centered = false
 
 [node name="Punch" type="AnimatedSprite" parent="."]
 visible = false
-frames = SubResource( 16 )
+frames = SubResource( 15 )
 animation = "punch"
+frame = 1
 playing = true
 centered = false
 
@@ -151,7 +148,7 @@ amount = 5
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 19 )
+process_material = SubResource( 18 )
 texture = ExtResource( 3 )
 
 [node name="dust_particle_right" type="Particles2D" parent="."]
@@ -161,7 +158,7 @@ amount = 5
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 19 )
+process_material = SubResource( 18 )
 texture = ExtResource( 3 )
 
 [node name="Punch_HitBox" type="Area2D" parent="."]
@@ -170,7 +167,7 @@ collision_mask = 2147483648
 
 [node name="punch_collision" type="CollisionShape2D" parent="Punch_HitBox"]
 position = Vector2( 38, 23 )
-shape = SubResource( 20 )
+shape = SubResource( 19 )
 disabled = true
 
 [node name="Punch_SFX" type="AudioStreamPlayer2D" parent="."]

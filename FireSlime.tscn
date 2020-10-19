@@ -100,7 +100,7 @@ visible = false
 position = Vector2( -4, -8.5 )
 frames = SubResource( 13 )
 animation = "New Anim"
-frame = 5
+frame = 2
 playing = true
 
 [node name="HurtBox" type="Area2D" parent="."]
@@ -114,5 +114,4 @@ shape = SubResource( 14 )
 visible = false
 position = Vector2( -4, -8.5 )
 frames = SubResource( 16 )
-[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="area_shape_entered" from="HurtBox" to="." method="_on_HurtBox_area_shape_entered"]

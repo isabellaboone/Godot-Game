@@ -53,3 +53,4 @@ TODO:
 - Weapons
 - Actual enemies
 - Enemies drop cells
+- Add 2Dcamera to player, make map bigger

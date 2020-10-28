@@ -3,7 +3,6 @@ extends TileMap
 class_name Walker
 
 const DIRECTIONS = [Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN]
-var borderss = Rect2(1, 1, 32, 17)
 
 var pos = Vector2.ZERO
 var direction = Vector2.RIGHT
@@ -53,7 +52,7 @@ func create_room(pos, size):
 	return {pos = pos, size = size}
 
 func place_room(pos):
-	var size = Vector2(randi() % 5 + 3, randi() % 5 + 3) # % 4 + 2
+	var size = Vector2(randi() % 2 + 2, randi() % 2 + 2) # % 4 + 2
 	var top_left_corner = (pos - size/2).ceil()
 	rooms.append(create_room(pos, size))
 	for y in size.y:
@@ -70,8 +69,35 @@ func get_end_room():
 			end_room = room
 	return end_room
 
+var blankTile = 22
+var dict = {"u": 10, "d" : 2, "l": 12, "r":15, "dl": 0, "ul": 8, "ur": 11,
+"ulr": blankTile, "dlr": blankTile, "udlr":19, "udr": blankTile,
+ "udl": blankTile, "ud": blankTile, "lr" : 25, "dr": 3}
+var blanks = [blankTile, 16, 18, 19, 20, 21, 23]
 
-
+func cleanTileMap(tileMap):
+	var used_cells = tileMap.get_used_cells()
+	#var check = 22
+	for pos in used_cells:
+		var x = pos.x
+		var y = pos.y
+		#if x == 0:
+		#	continue
+		#print(tileMap.get_cell(x, y))
+		if tileMap.get_cell(x, y) in blanks : 
+			continue
+		var temp = ""
+		if(tileMap.get_cell(x, y-1) in blanks):
+			temp += "u"
+		if(tileMap.get_cell(x, y+1) in blanks):
+			temp += "d"
+		if(tileMap.get_cell(x-1, y) in blanks):
+			temp += "l"
+		if(tileMap.get_cell(x+1, y) in blanks):
+			temp += "r"
+		if temp != "":# and temp != "dr" and temp != "dl":
+			tileMap.set_cellv(pos, dict[temp])
+		#print(temp)
 
 
 

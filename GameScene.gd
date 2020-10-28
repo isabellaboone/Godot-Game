@@ -10,6 +10,7 @@ var fireslime_scene = preload("res://FireSlime.tscn")
 var ui_scene = preload("res://UI.tscn")
 var red_book_scene = preload("res://Red_Book.tscn")
 var rat_npc_scene = preload("res://Rat_NPC.tscn")
+var torch_scene = preload("res://Torch.tscn")
 
 var player
 var npc
@@ -86,6 +87,9 @@ func _ready():
 	add_child(red_book)
 	add_child(red_book_end)
 	
+	var torch = torch_scene.instance()
+	torch.position = Vector2(900, 200)
+	add_child(torch)
 	
 func _process(delta):
 	if(red_book != null):

@@ -27,3 +27,7 @@ func _on_Music_value_changed(value):
 
 func _on_Audio_value_changed(value):
 	globals.soundvol = value
+
+
+func _on_CreditsButton_pressed():
+	get_tree().change_scene("res://Credits.tscn")

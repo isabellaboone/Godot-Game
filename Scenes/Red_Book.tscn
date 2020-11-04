@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Player/icons/book3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/SFX/pick_up.wav" type="AudioStream" id=2]
-[ext_resource path="res://Red_Book.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Red_Book.gd" type="Script" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.0551181, 0.511811, 1 )

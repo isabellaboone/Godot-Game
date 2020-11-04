@@ -2,15 +2,15 @@ extends Node2D
 
 #var TileMap_scene = preload("res://TileMap.tscn")
 
-var tileMap = preload("res://RandomTileMap.tscn")
-var RandomTileMap = preload("res://RandomTileMap.gd")
+var tileMap = preload("res://Scenes/RandomTileMap.tscn")
+var RandomTileMap = preload("res://Scripts/RandomTileMap.gd")
 
-var player_scene = preload("res://Player.tscn")
-var fireslime_scene = preload("res://FireSlime.tscn")
-var ui_scene = preload("res://UI.tscn")
-var red_book_scene = preload("res://Red_Book.tscn")
-var rat_npc_scene = preload("res://Rat_NPC.tscn")
-var torch_scene = preload("res://Torch.tscn")
+var player_scene = preload("res://Scenes/Player.tscn")
+var fireslime_scene = preload("res://Scenes/FireSlime.tscn")
+var ui_scene = preload("res://Scenes/UI.tscn")
+var red_book_scene = preload("res://Scenes/Red_Book.tscn")
+var rat_npc_scene = preload("res://Scenes/Rat_NPC.tscn")
+var torch_scene = preload("res://Scenes/Torch.tscn")
 
 var player
 var npc

@@ -1,87 +1,87 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Player/player/player-spritemap-v9-greenpants.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Player/particle/dust.png" type="Texture" id=3]
-[ext_resource path="res://Assets/SFX/punch.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Player/player/player-spritemap-v9-greenpants.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Player/particle/dust.png" type="Texture" id=2]
+[ext_resource path="res://Assets/SFX/punch.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 2 )
-region = Rect2( 46, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 2 )
-region = Rect2( 92, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 2 )
-region = Rect2( 138, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
-region = Rect2( 184, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 230, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
-region = Rect2( 276, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
-region = Rect2( 322, 150, 46, 50 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 46, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
 region = Rect2( 92, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
 region = Rect2( 138, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
 region = Rect2( 184, 0, 46, 50 )
 
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
 region = Rect2( 230, 0, 46, 50 )
 
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 46, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 92, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 138, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 184, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 230, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 276, 150, 46, 50 )
+
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
-region = Rect2( 46, 0, 46, 50 )
+atlas = ExtResource( 1 )
+region = Rect2( 322, 150, 46, 50 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "run",
-"speed": 12.0
-}, {
-"frames": [ SubResource( 9 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "stand",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "squat",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "punch",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 14 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
-"name": "squat",
-"speed": 5.0
+"name": "run",
+"speed": 12.0
 } ]
 
 [sub_resource type="Curve" id=16]
@@ -105,7 +105,7 @@ height = 30.0
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
-script = ExtResource( 1 )
+script = ExtResource( 4 )
 
 [node name="Player_Collision" type="CollisionPolygon2D" parent="."]
 position = Vector2( 22, 30 )
@@ -115,7 +115,7 @@ polygon = PoolVector2Array( 0, -25, 11, -5, 0, 18, -11, -5 )
 visible = false
 frames = SubResource( 15 )
 animation = "run"
-frame = 6
+frame = 2
 playing = true
 centered = false
 
@@ -136,7 +136,7 @@ centered = false
 visible = false
 frames = SubResource( 15 )
 animation = "punch"
-frame = 1
+frame = 2
 playing = true
 centered = false
 
@@ -149,7 +149,7 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 18 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="dust_particle_right" type="Particles2D" parent="."]
 position = Vector2( 17, 48 )
@@ -159,7 +159,7 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 18 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Punch_HitBox" type="Area2D" parent="."]
 collision_layer = 2147483648
@@ -171,7 +171,7 @@ shape = SubResource( 19 )
 disabled = true
 
 [node name="Punch_SFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 volume_db = 1.0
 [connection signal="area_entered" from="Punch_HitBox" to="." method="_on_Punch_HitBox_area_entered"]
 [connection signal="area_shape_entered" from="Punch_HitBox" to="." method="_on_Punch_HitBox_area_shape_entered"]

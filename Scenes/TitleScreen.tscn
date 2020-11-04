@@ -26,7 +26,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 601.0
-mouse_filter = 1
+mouse_filter = 2
 color = Color( 0.360784, 0.364706, 0.290196, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -90,9 +90,9 @@ rect_min_size = Vector2( 360, 53 )
 mouse_default_cursor_shape = 2
 
 [node name="HBox" type="HBoxContainer" parent="Menu"]
-margin_top = 576.0
+margin_top = 525.0
 margin_right = 1026.0
-margin_bottom = 614.0
+margin_bottom = 563.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -142,6 +142,7 @@ custom_fonts/font = SubResource( 1 )
 text = "Audio"
 
 [node name="FadeIn" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

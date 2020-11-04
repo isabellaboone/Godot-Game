@@ -23,4 +23,4 @@ func spend_coins(total):
 func check_win():
 	if(coins == 1):
 		print("win")
-		get_tree().change_scene("res://WinSCreen.tscn")
+		get_tree().change_scene("res://Scenes/WinScreen.tscn")

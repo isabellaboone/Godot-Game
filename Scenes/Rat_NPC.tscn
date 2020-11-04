@@ -5,53 +5,53 @@
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 192, 48, 64 )
+region = Rect2( 48, 128, 48, 64 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 48, 192, 48, 64 )
+region = Rect2( 0, 192, 48, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 96, 192, 48, 64 )
+region = Rect2( 48, 192, 48, 64 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 64, 48, 64 )
+region = Rect2( 96, 192, 48, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 48, 64, 48, 64 )
+region = Rect2( 0, 64, 48, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 96, 64, 48, 64 )
+region = Rect2( 48, 64, 48, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 48, 128, 48, 64 )
+region = Rect2( 96, 64, 48, 64 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "walk_left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "walk_right",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 7 ) ],
-"loop": true,
-"name": "stand",
 "speed": 5.0
 } ]
 
@@ -69,14 +69,13 @@ playing = true
 visible = false
 frames = SubResource( 8 )
 animation = "walk_left"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Walk_Right" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 8 )
 animation = "walk_right"
-frame = 1
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]

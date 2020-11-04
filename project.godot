@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "TileMap",
 "class": "Walker",
 "language": "GDScript",
-"path": "res://RandomTileMap.gd"
+"path": "res://Scripts/RandomTileMap.gd"
 } ]
 _global_script_class_icons={
 "Walker": ""
@@ -21,12 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Gaem"
-run/main_scene="res://Runner.tscn"
+run/main_scene="res://Scenes/Runner.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-globals="*res://globals.gd"
+globals="*res://Scripts/globals.gd"
 
 [input]
 

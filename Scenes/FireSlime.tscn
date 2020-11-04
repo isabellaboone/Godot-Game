@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/messy.png" type="Texture" id=1]
-[ext_resource path="res://FireSlime.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/FireSlime.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.02368, 6.48806 )
@@ -100,7 +100,7 @@ visible = false
 position = Vector2( -4, -8.5 )
 frames = SubResource( 13 )
 animation = "New Anim"
-frame = 2
+frame = 5
 playing = true
 
 [node name="HurtBox" type="Area2D" parent="."]

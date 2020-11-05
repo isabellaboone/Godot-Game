@@ -25,3 +25,22 @@ func _on_ExitButton_pressed():
 
 func _on_CreditsButton_pressed():
 	get_tree().change_scene("res://Scenes/CreditsScene.tscn")
+
+
+func _on_player_input_event(viewport, event, shape_idx):
+	if event.type == InputEvent.MOUSE_BUTTON \
+	and event.button_index == BUTTON_LEFT \
+	and event.pressed:
+		print("clicked")
+		get_node("Menu/VBoxContainer/player/player sprite").play(randanimation())
+	pass # Replace with function body.
+
+#definitely a dumb way to do this
+func randanimation(): 
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var rand = rng.randi_range(0, 3)
+	var names = ["default", "duck punch", "run", "tippy toes"]
+	print(rand)
+	print(rand[names])
+	return names[rand]

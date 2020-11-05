@@ -6,4 +6,5 @@
 margin_bottom = 60.0
 
 [node name="Label" parent="." index="0"]
+custom_colors/font_color_shadow = Color( 0.0196078, 0.396078, 0.572549, 1 )
 text = "PLAY"

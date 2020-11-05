@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Assets/title_screen/Square.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/title_screen/buttons/PlayButton.tscn" type="PackedScene" id=2]
@@ -10,7 +10,197 @@
 [ext_resource path="res://Scripts/Audio.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/Music.gd" type="Script" id=10]
-[ext_resource path="res://Assets/graphic design is my passion.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Player/player/player-spritemap-v9-redpants.png" type="Texture" id=11]
+[ext_resource path="res://Assets/messy.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=2]
+size = 85
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 50, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 11 )
+region = Rect2( 46, 50, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 11 )
+region = Rect2( 46, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 11 )
+region = Rect2( 92, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 11 )
+region = Rect2( 138, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 11 )
+region = Rect2( 184, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 11 )
+region = Rect2( 230, 100, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 11 )
+region = Rect2( 46, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 11 )
+region = Rect2( 92, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 11 )
+region = Rect2( 138, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 11 )
+region = Rect2( 184, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 11 )
+region = Rect2( 230, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 11 )
+region = Rect2( 276, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 11 )
+region = Rect2( 322, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 11 )
+region = Rect2( 92, 50, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 11 )
+region = Rect2( 138, 50, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 11 )
+region = Rect2( 184, 50, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 11 )
+region = Rect2( 230, 50, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 11 )
+region = Rect2( 46, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 11 )
+region = Rect2( 92, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 11 )
+region = Rect2( 138, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 11 )
+region = Rect2( 184, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 11 )
+region = Rect2( 230, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 11 )
+region = Rect2( 276, 150, 46, 50 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 11 )
+region = Rect2( 322, 150, 46, 50 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "duck punch",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"loop": true,
+"name": "tippy toes",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=46]
+extents = Vector2( 79.383, 167.699 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 37, 36 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 12 )
+region = Rect2( 37, 0, 37, 36 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 12 )
+region = Rect2( 74, 0, 37, 36 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 12 )
+region = Rect2( 111, 0, 37, 36 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 12 )
+region = Rect2( 148, 0, 37, 36 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 12 )
+region = Rect2( 185, 0, 37, 36 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 12 )
+region = Rect2( 222, 0, 37, 36 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 12 )
+region = Rect2( 259, 0, 37, 36 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -42,14 +232,52 @@ __meta__ = {
 
 [node name="Logo" type="TextureRect" parent="Menu"]
 margin_right = 1026.0
-margin_bottom = 344.0
-texture = ExtResource( 11 )
 stretch_mode = 4
 
-[node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_top = 348.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+margin_top = 4.0
 margin_right = 1026.0
-margin_bottom = 572.0
+margin_bottom = 204.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/VBoxContainer"]
+margin_right = 1026.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 1026, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.0196078, 0.396078, 0.572549, 1 )
+bbcode_enabled = true
+bbcode_text = "[wave][center] GAEM[/center] [/wave]"
+text = " GAEM "
+
+[node name="player" type="Area2D" parent="Menu/VBoxContainer"]
+
+[node name="player sprite" type="AnimatedSprite" parent="Menu/VBoxContainer/player"]
+position = Vector2( 27.1456, 95.2723 )
+scale = Vector2( 7.4682, 7.4682 )
+frames = SubResource( 7 )
+playing = true
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Menu/VBoxContainer/player"]
+position = Vector2( 198.12, 289.233 )
+shape = SubResource( 46 )
+
+[node name="slime" type="AnimatedSprite" parent="Menu/VBoxContainer"]
+position = Vector2( 839.448, 292.412 )
+scale = Vector2( 7.59221, 7.59221 )
+frames = SubResource( 16 )
+frame = 2
+playing = true
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 208.0
+margin_right = 1026.0
+margin_bottom = 432.0
 size_flags_vertical = 3
 alignment = 1
 
@@ -90,15 +318,15 @@ rect_min_size = Vector2( 360, 53 )
 mouse_default_cursor_shape = 2
 
 [node name="HBox" type="HBoxContainer" parent="Menu"]
-margin_top = 520.0
+margin_top = 500.0
 margin_right = 1026.0
-margin_bottom = 614.0
+margin_bottom = 618.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Music" type="VBoxContainer" parent="Menu/HBox"]
 margin_right = 44.0
-margin_bottom = 94.0
+margin_bottom = 117.0
 
 [node name="Music" type="HSlider" parent="Menu/HBox/Music"]
 margin_right = 44.0
@@ -121,7 +349,7 @@ text = "Music"
 [node name="Audio" type="VBoxContainer" parent="Menu/HBox"]
 margin_left = 48.0
 margin_right = 92.0
-margin_bottom = 94.0
+margin_bottom = 117.0
 
 [node name="Audio" type="HSlider" parent="Menu/HBox/Audio"]
 margin_right = 44.0
@@ -146,6 +374,7 @@ visible = false
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+[connection signal="input_event" from="Menu/VBoxContainer/player" to="." method="_on_player_input_event"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/CreditsButton" to="." method="_on_CreditsButton_pressed"]

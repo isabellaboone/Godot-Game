@@ -27,7 +27,7 @@ __meta__ = {
 margin_right = 1024.0
 margin_bottom = 601.0
 mouse_filter = 2
-color = Color( 0.360784, 0.364706, 0.290196, 1 )
+color = Color( 0.00784314, 0.0901961, 0.129412, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -90,15 +90,15 @@ rect_min_size = Vector2( 360, 53 )
 mouse_default_cursor_shape = 2
 
 [node name="HBox" type="HBoxContainer" parent="Menu"]
-margin_top = 525.0
+margin_top = 520.0
 margin_right = 1026.0
-margin_bottom = 563.0
+margin_bottom = 614.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Music" type="VBoxContainer" parent="Menu/HBox"]
 margin_right = 44.0
-margin_bottom = 38.0
+margin_bottom = 94.0
 
 [node name="Music" type="HSlider" parent="Menu/HBox/Music"]
 margin_right = 44.0
@@ -121,7 +121,7 @@ text = "Music"
 [node name="Audio" type="VBoxContainer" parent="Menu/HBox"]
 margin_left = 48.0
 margin_right = 92.0
-margin_bottom = 38.0
+margin_bottom = 94.0
 
 [node name="Audio" type="HSlider" parent="Menu/HBox/Audio"]
 margin_right = 44.0

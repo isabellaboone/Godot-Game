@@ -5,8 +5,8 @@ General Game
 Player:
 - Fighting and running animation - DONE
 - Moveable - DONE
-- Open/close doors
-- Pick up scrolls that increase health, dmg, etc - DONE
+- Portals
+- Pick up scrolls that increase health, dmg, etc - 50%
 - Has particle effects at feet when running around - DONE
 - Sound effect when fighting - DONE
 - Sound effect when interacting with NPC
@@ -40,17 +40,15 @@ Goal
 -	Kill all enemies, open final door, then go back go intro screen
 
 Intro Screen
-- Display credits 
+- Display credits - DONE
 - Volume sliders for both sound effects and music - DONE
 - "Play" and "How to Play" buttons - DONE
 - Title screen music that stops when play button is pressed. - DONE
 
  
 TODO: 
-- Doors
+- Portals
 - Double jump item
 - Background object
-- Weapons
 - Actual enemies
-- Enemies drop cells
 - Add 2Dcamera to player, make map bigger

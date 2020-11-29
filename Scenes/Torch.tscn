@@ -54,7 +54,7 @@ hue_variation = 1.0
 
 [node name="Node2D" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="Node2D"]

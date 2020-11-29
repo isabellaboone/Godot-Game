@@ -24,6 +24,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1020.0
+margin_bottom = 600.0
+color = Color( 0.00784314, 0.0901961, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -37,13 +45,15 @@ __meta__ = {
 
 [node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_right = 784.0
-margin_bottom = 218.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 0, 400 )
+size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
 margin_right = 784.0
-margin_bottom = 218.0
+margin_bottom = 400.0
 size_flags_vertical = 3
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
@@ -95,16 +105,17 @@ Godot
 "
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 222.0
+margin_top = 404.0
 margin_right = 784.0
-margin_bottom = 440.0
-size_flags_vertical = 3
+margin_bottom = 528.0
+size_flags_horizontal = 13
+size_flags_vertical = 15
 alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/VBoxContainer"]
-margin_top = 97.0
+margin_top = 50.0
 margin_right = 784.0
-margin_bottom = 121.0
+margin_bottom = 74.0
 custom_fonts/font = SubResource( 3 )
 text = "RETURN"
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
